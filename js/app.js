@@ -3,6 +3,30 @@
     var tasks = [
         {content: "acheter du lait", status: false, id:4}
     ];
+    $('.btn').click(function(){
+        var task = $('#task').val();
+                if (task == ''){
+                    alert ('Veuillez rentrer une donnée');
+                }else{
+                    for (var i=0;i<tasks.length;i++){
+                        id=i;
+                    }
+                    tasks.push({content:task, status:false, id});
+                    $('#renderTasks').append('<li id="litache">'+tasks[tasks.length -1].content+'</li>');
+                    $('#task').val('');
+                }
+            return false;
+    });  
+    // BONUS
+    $('#litache').click(function(){
+        if (status === false){
+            return true
+        }else{
+            return false
+        }
+        console.log('#litache');
+    });
+})();
 
 // TODO :
 // 1 : Repérer l'envoie du formulaire d'id 'addTask', puis dans le callback : 
@@ -24,7 +48,7 @@
     // 4
 
 
-})();
+
 
 
 
